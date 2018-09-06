@@ -16,10 +16,36 @@ A Keras Python project for detecting anomalies in geospatial maps
 
 * Google static maps API
 
+* Anaconda 3.6
+
 * Some neural bois
 
 ## Quickstart
 
+Get up and running the pretrained model in seconds
+
+#### Download Google Static Maps
+
+Add your google maps api to the string in the GeospatialIntelligence.py file
+
+> y_google_api_key = "" #fill in your own api key
+
+Go ahead and comment out training the model on line 34ish
+
+> #anomaly.train(modelfolder)
+
+Run the GeospatialIntelligence.py file from the repo's folder
+
+>cd Deep-Geospatial
+
+>python logic/GeospatialIntelligence.py
+
+
+#### Load Pretrained Model
+
+#### Evaluate Imagery
+
+> mkdir data
 
 
 <img src="resources/model_plot.png" width="200" height="600" />

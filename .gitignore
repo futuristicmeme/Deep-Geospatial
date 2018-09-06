@@ -16,3 +16,6 @@ Graph/events.out.tfevents.1534825988.DESKTOP-2UCRH42
 Graph/events.out.tfevents.1535083252.DESKTOP-2UCRH42
 Graph/events.out.tfevents.1535083819.DESKTOP-2UCRH42
 *.pyc
+temp
+*.edu
+*.ipynb

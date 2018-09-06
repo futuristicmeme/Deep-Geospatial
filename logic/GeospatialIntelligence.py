@@ -18,10 +18,10 @@ def main():
 
     # Create a new instance of GoogleMap Downloader
     # default 34.872548, 51.427510 
-    #trainingdata = gmf.GoogleMapFetch(400, 34.872548, 51.427510, zoom=18, apikey=my_google_api_key)
+    trainingdata = gmf.GoogleMapFetch(400, 34.872548, 51.427510, zoom=18, apikey=my_google_api_key)
 
     # Get the high resolution satellite images
-    #trainingdata.generateImages(datafolder, 80, 80)
+    trainingdata.generateImages(datafolder, 80, 80)
 
     print("------The satellite imagery for training has successfully been created!------\n")
     
@@ -29,9 +29,9 @@ def main():
     resY = 400
     anomaly = A.Anomaly(resX,resY, 48, color=True)
     
-    #anomaly.loadTrainingData(datafolder, testpercent=10)
+    anomaly.loadTrainingData(datafolder, testpercent=10)
     anomaly.createModel()
-    #anomaly.train(modelfolder)
+    anomaly.train(modelfolder)
 
     anomaly.loadModel(modelfolder+'model.h5')
     
