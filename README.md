@@ -2,6 +2,8 @@
 
 A Keras Python project for detecting anomalies in geospatial maps
 
+### This has more or less just become a playground for testing new stuff out on an existing project... dont expect much readability...
+
 <img src="https://78.media.tumblr.com/d14666bd4de029b7ee6bb61a96d90828/tumblr_inline_ohvef7kB3O1tzhl5u_400.gif" width="400" height="200" />
 
 
