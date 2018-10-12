@@ -161,7 +161,7 @@ class Anomaly():
         #tensorboard --logdir path_to_current_dir/Graph to see visual progress
         self.model.fit(self.x_train, self.x_train,
                 epochs=100,
-                batch_size=64,
+                batch_size=32,
                 shuffle=True,
                 validation_data=(self.x_test, self.x_test), 
                 callbacks=[tbCallBack])
