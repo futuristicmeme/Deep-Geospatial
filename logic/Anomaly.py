@@ -187,23 +187,44 @@ class Anomaly():
                 eval_images.append(img)
         x_eval = np.array(eval_images).astype('float32')      
         #detect anomalys
+        print(x_eval.shape)
         decoded_imgs = self.model.predict(x_eval)
 
         n = len(eval_images)
         for i in range(n):
             # display original
-            original_img = Image.fromarray(eval_images[i], 'RGB')
-            original_img.show()
+            # original_img = Image.fromarray(eval_images[i], 'RGB')
+            # original_img.show()
 
             # display reconstruction
-            decoded_img = Image.fromarray(decoded_imgs[i], 'RGB')
-            decoded_img.save(evalimgspath+'predicted'+str(i)+'.png')
-            decoded_img.show()
+            # decoded_img = Image.fromarray(decoded_imgs[i], 'RGB')
+            # decoded_img.show()
 
             print('Mean Squared Error of iteration {0} : {1}'.format(i,self.mse(eval_images[i], decoded_imgs[i])))
+        return decoded_imgs
 
+    def evalSingle(self,image_path):
+        """
+                Evaluates a single image and returns the mse 
+            
+                Args:
 
-        return 
+                    evalimgspath: location of the eval image(s)      
+
+        """
+                #compare generated image to original
+        image_paths = [image_path, image_path]
+        eval_images = []
+        for image_path in image_paths:    
+            img = io.imread(image_path , as_grey=(self.color!=3))
+            img = img.reshape(self.res_x,self.res_y,self.color)
+            eval_images.append(img)
+        x_eval = np.array(eval_images).astype('float32')      
+        #detect anomalys
+        print(x_eval.shape)
+        decoded_imgs = self.model.predict(x_eval)
+        print(decoded_imgs.shape)
+        return decoded_imgs[0]
 
 
     def mse(self, imageA, imageB):
